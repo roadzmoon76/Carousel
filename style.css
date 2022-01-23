@@ -67,54 +67,99 @@ h1 {
 .bottom-button-1 {
   background-color: transparent;
   border-radius: 1em;
+  border: none;
 }
 
 .bottom-button-2 {
   background-color: transparent;
   border-radius: 1em;
+  border: none;
 }
 
 .bottom-button-3 {
   background-color: transparent;
   border-radius: 1em;
+  border: none;
 }
 
 .bottom-button-4 {
   background-color: transparent;
   border-radius: 1em;
+  border: none;
 }
 
 .bottom-button-5 {
   background-color: transparent;
   border-radius: 1em;
+  border: none;
 }
 
 .bottom-icon-1 {
   opacity: 0.3;
-  margin: 0em 1em;
-  color: white;
+  margin: 0em 0.2em;
+  color: black;
+}
+
+.bottom-icon-1:hover {
+  color: grey;
+}
+
+.bottom-icon-1:active {
+  transform: translateY(0.1em);
 }
 
 .bottom-icon-2 {
   opacity: 0.3;
-  margin: 0em 1em;
-  color: white;
+  margin: 0em 0.2em;
+  color: black;
+}
+
+.bottom-icon-2:hover {
+  color: grey;
+}
+
+.bottom-icon-2:active {
+  transform: translateY(0.1em);
 }
 
 .bottom-icon-3 {
   opacity: 0.3;
-  margin: 0em 1em;
-  color: white;
+  margin: 0em 0.2em;
+  color: black;
+}
+
+.bottom-icon-3:hover {
+  color: grey;
+}
+
+.bottom-icon-3:active {
+  transform: translateY(0.1em);
 }
 
 .bottom-icon-4 {
   opacity: 0.3;
-  margin: 0em 1em;
-  color: white;
+  margin: 0em 0.2em;
+  color: black;
+}
+
+.bottom-icon-4:hover {
+  color: grey;
+}
+
+.bottom-icon-4:active {
+  transform: translateY(0.1em);
 }
 
 .bottom-icon-5 {
   opacity: 0.3;
-  margin: 0em 1em;
-  color: white;
+  margin: 0em 0.2em;
+  color: black;
+}
+
+.bottom-icon-5:hover {
+  color: grey;
+}
+
+.bottom-icon-5:active {
+  transform: translateY(0.1em);
 }
