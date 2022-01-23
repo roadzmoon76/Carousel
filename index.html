@@ -12,8 +12,14 @@
       rel="stylesheet"
     />
     <link rel="icon" href="/images/favicon.ico" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Calendar Project</title>
+    <title>Carousel Project</title>
   </head>
 
   <body>
@@ -21,88 +27,36 @@
       <div class="image-box">
         <img src="images/vanilla_coding_logo.png" />
       </div>
-      <h1>Calendar</h1>
+      <h1>Carousel</h1>
 
-      <div class="calendar-container">
-        <div class="current-day">
-          <p></p>
-          <p></p>
-        </div>
-        <p class="current-month"></p>
-        <div class="calendar">
-          <table>
-            <thead>
-              <tr>
-                <th>SUN</th>
-                <th>MON</th>
-                <th>TUE</th>
-                <th>WED</th>
-                <th>THU</th>
-                <th>FRI</th>
-                <th>SAT</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-          <button class="button prev"><<</button>
-          <button class="button next">>></button>
-        </div>
-      </div>
+      <!-- Carousel Start -->
+      <main class="main-box">
+        <button class="left-button">
+          <i class="fas fa-chevron-circle-left fa-3x left-arrow"></i>
+        </button>
+        <img class="main-image" src="images/image-1.png" />
+        <button class="right-button">
+          <i class="fas fa-chevron-circle-right fa-3x right-arrow"></i>
+        </button>
+      </main>
+      <footer class="bottom-box">
+        <button class="bottom-button-1">
+          <i class="fas fa-circle fa-xs bottom-icon-1"></i>
+        </button>
+        <button class="bottom-button-2">
+          <i class="fas fa-circle fa-xs bottom-icon-2"></i>
+        </button>
+        <button class="bottom-button-3">
+          <i class="fas fa-circle fa-xs bottom-icon-3"></i>
+        </button>
+        <button class="bottom-button-4">
+          <i class="fas fa-circle fa-xs bottom-icon-4"></i>
+        </button>
+        <button class="bottom-button-5">
+          <i class="fas fa-circle fa-xs bottom-icon-5"></i>
+        </button>
+      </footer>
+      <!-- Carousel End -->
     </section>
 
     <script src="index.js"></script>

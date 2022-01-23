@@ -1,122 +1,58 @@
-var DAYS = [
-  'SUN',
-  'MON',
-  'TUE',
-  'WED',
-  'THU',
-  'FRI',
-  'SAT'
-];
+let indexNum = 1;
+let rightButton = document.querySelector('.right-button');
+let leftButton = document.querySelector('.left-button');
+let mainImage = document.querySelector('.main-image');
+let imageArray = [
+    'images/image-1.png',
+    'images/image-2.png',
+    'images/image-3.png',
+    'images/image-4.png',
+    'images/image-5.png'
+]
+let bottomButton1 = document.querySelector('.bottom-button-1')
+let bottomButton2 = document.querySelector('.bottom-button-2')
+let bottomButton3 = document.querySelector('.bottom-button-3')
+let bottomButton4 = document.querySelector('.bottom-button-4')
+let bottomButton5 = document.querySelector('.bottom-button-5')
 
-var MONTHS = [
-  'JAN',
-  'FEB',
-  'MAR',
-  'APR',
-  'MAY',
-  'JUN',
-  'JUL',
-  'AUG',
-  'SEP',
-  'OCT',
-  'NOV',
-  'DEC'
-];
+document.querySelector(`.bottom-icon-${indexNum}`).style.opacity = 1;
 
-var calendarDates = document.querySelectorAll('tbody td');
-var currentDay = document.querySelectorAll('.current-day p');
 
-function displayCalendar(today) {
-  var month = today.getMonth();
-  var year = today.getFullYear();
+rightButton.addEventListener('click', nextImage);
+leftButton.addEventListener('click', previousImage);
 
-  if (month !== nowMonth || year !== nowYear) {
-    today.setDate(1);
-  }
+console.log(indexNum);
 
-  var date = today.getDate();
-  var day = today.getDay();
+bottomButton1.addEventListener('click', indexImage (1));
+bottomButton2.addEventListener('click', indexImage (2));
+bottomButton3.addEventListener('click', indexImage (3));
+bottomButton4.addEventListener('click', indexImage (4));
+bottomButton5.addEventListener('click', indexImage (5));
 
-  var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+console.log(indexNum);
 
-  var currentMonth = document.querySelector('.current-month');
+function nextImage () {
+    indexNum ++;
 
-  currentMonth.textContent = MONTHS[month] + ' ' + year;
-
-  var dayIndex = day;
-
-  if (month === nowMonth && year === nowYear) {
-    currentDay[0].textContent = DAYS[nowDay];
-    currentDay[1].textContent = nowDate;
-  } else {
-    currentDay[0].textContent = DAYS[day];
-    currentDay[1].textContent = 1;
-  }
-
-  for (var i = 0; i < calendarDates.length; i++) {
-    calendarDates[i].textContent = '';
-  }
-
-  for (var i = 1; i <= lastDate; i++) {
-    calendarDates[dayIndex].textContent = i;
-    calendarDates[dayIndex].style.color = 'black';
-
-    if (i === date && year === nowYear && month === nowMonth) {
-      calendarDates[dayIndex].style.color = 'red';
+    if (indexNum === 6) {
+        indexNum = 1;
     }
 
-    updateSelectedDay(dayIndex, day);
-
-    dayIndex++;
-  }
+    mainImage.src = `images/image-${indexNum}.png`;
 }
 
-function updateSelectedDay(currentIndex, firstDay) {
-  calendarDates[currentIndex].addEventListener('click', function (ev) {
-    if (!ev.target.textContent) {
-      return;
+function previousImage () {
+    indexNum --;
+
+    if (indexNum === 0) {
+        indexNum = 5;
     }
 
-    if (currentIndex < 7) {
-      currentDay[0].textContent = DAYS[currentIndex];
-    } else {
-      currentDay[0].textContent = DAYS[currentIndex % 7];
-    }
-
-    var newIndex = currentIndex - firstDay;
-    currentDay[1].textContent = newIndex + 1;
-  });
+    mainImage.src = `images/image-${indexNum}.png`;
 }
 
-var prevButton = document.querySelector('.button.prev');
-var nextButton = document.querySelector('.button.next');
-
-prevButton.addEventListener('click', function () {
-  var currentMonth = d.getMonth();
-  d.setMonth(currentMonth - 1);
-
-  if (d.getMonth() === nowMonth && d.getFullYear() === nowYear) {
-    d = new Date();
-  }
-
-  displayCalendar(d);
-});
-
-nextButton.addEventListener('click', function () {
-  var currentMonth = d.getMonth();
-  d.setMonth(currentMonth + 1);
-
-  if (d.getMonth() === nowMonth && d.getFullYear() === nowYear) {
-    d = new Date();
-  }
-
-  displayCalendar(d);
-});
-
-var d = new Date();
-var nowYear = d.getFullYear();
-var nowMonth = d.getMonth();
-var nowDate = d.getDate();
-var nowDay = d.getDay();
-
-displayCalendar(d);
+function indexImage (i) {
+    indexNum = i;
+    mainImage.src = `images/image-${i}.png`;
+    document.querySelector(`.bottom-icon-${i}`).style.opacity = 1;
+}
